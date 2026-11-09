@@ -149,6 +149,13 @@
   .skill .mono { color: var(--accent); display: block; margin-bottom: .5rem; }
   .skill p { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.4; }
 
+  .skill.soft { grid-column: 1 / -1; }
+  .soft-list { list-style: none; margin: .35rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+  .soft-list li { font-family: var(--serif); font-style: italic; font-size: 1.2rem; padding: .3rem 1rem; border: 1px solid var(--ink); border-radius: 999px; transition: background .15s, color .15s, transform .15s; }
+  .soft-list li:nth-child(odd) { transform: rotate(-1.5deg); }
+  .soft-list li:nth-child(even) { transform: rotate(1.2deg); }
+  .soft-list li:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); transform: rotate(0) translateY(-2px); }
+
   /* Timeline (education + volunteering) */
   .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
   .timeline::before { content: ""; position: absolute; left: 7px; top: .5rem; bottom: .5rem; width: 1px; background: var(--ink); opacity: .35; }
@@ -297,10 +304,15 @@ srun ./achraf --motive <span class="cursor" aria-hidden="true"></span></pre>
     <section id="competences">
       <div class="sec-head"><span class="num">02</span><h2>Compétences</h2></div>
       <div class="skills">
-        <div class="skill"><span class="mono">langages</span><p>C, Java, Python, Ada, Matlab</p></div>
+        <div class="skill"><span class="mono">langages</span><p>C, Java, Python, Julia, Ada, Matlab</p></div>
         <div class="skill"><span class="mono">mathématiques</span><p>Probabilités, statistiques, algèbre linéaire, analyse numérique, calcul scientifique, optimisation</p></div>
-        <div class="skill"><span class="mono">outils</span><p>Git, Linux/Unix, Eclipse, méthodes agiles (Scrum)</p></div>
+        <div class="skill"><span class="mono">outils</span><p>Git, Linux/Unix, VS Code, Eclipse, méthodes agiles (Scrum)</p></div>
         <div class="skill"><span class="mono">langues</span><p>Arabe (maternelle), français (courant), anglais (courant)</p></div>
+        <div class="skill soft"><span class="mono">soft skills</span>
+          <ul class="soft-list">
+            <li>Curieux</li><li>Autonome</li><li>Rigoureux</li><li>Esprit d’équipe</li><li>Persévérant</li><li>Adaptable</li><li>Bon communicant</li><li>Engagé</li>
+          </ul>
+        </div>
       </div>
     </section>
 
