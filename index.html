@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Achraf Naime, élève ingénieur HPC &amp; Big Data</title>
+<meta name="description" content="Portfolio d’Achraf Naime, élève ingénieur à l’INP-ENSEEIHT en HPC &amp; Big Data, à la recherche d’un stage de 2 mois dès juin 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #F3F6F8;
+    --ink: #14213D;
+    --muted: #4A5A6B;
+    --line: #CBD6DF;
+    --accent: #0B6E78;
+    --accent-ink: #FFFFFF;
+    --display: "Bricolage Grotesque", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --text: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0F1A2A;
+      --ink: #E7EDF3;
+      --muted: #9CAEC0;
+      --line: #28394D;
+      --accent: #56C6CF;
+      --accent-ink: #0F1A2A;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0F1A2A;
+    --ink: #E7EDF3;
+    --muted: #9CAEC0;
+    --line: #28394D;
+    --accent: #56C6CF;
+    --accent-ink: #0F1A2A;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: inherit; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: clamp(1.25rem, 4vw, 3rem); }
+
+  /* Header */
+  .top { display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; align-items: baseline; padding-block: 1.5rem; }
+  .top strong { font-family: var(--display); font-weight: 700; font-size: 1.125rem; letter-spacing: -.01em; }
+  .top nav { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+  .top nav a { text-decoration: none; color: var(--muted); font-size: .9375rem; }
+  .top nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+  /* Hero */
+  .hero { padding-block: clamp(2.5rem, 8vw, 6rem) 0; }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(3.5rem, 13vw, 9rem);
+    line-height: .92;
+    letter-spacing: -.035em;
+    margin: 0 0 1.75rem;
+  }
+  .lead { max-width: 40rem; font-size: clamp(1.125rem, 2.2vw, 1.375rem); line-height: 1.5; margin: 0 0 2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
+    padding: .75rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 600;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .link { font-weight: 500; text-underline-offset: 4px; }
+  #lanes { display: block; width: 100%; height: 140px; margin-top: clamp(2rem, 6vw, 4rem); }
+
+  /* Sections */
+  section { padding-block: clamp(3rem, 8vw, 5.5rem) 0; }
+  .sec { display: grid; gap: 1.25rem 3rem; border-top: 1px solid var(--line); padding-top: 1.75rem; }
+  .sec > h2 { font-family: var(--display); font-weight: 700; font-size: 1.75rem; letter-spacing: -.02em; line-height: 1.15; margin: 0; }
+  @media (min-width: 820px) { .sec { grid-template-columns: 200px 1fr; } }
+
+  /* Projects */
+  .project + .project { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .project h3 { font-family: var(--display); font-weight: 700; font-size: 1.5rem; letter-spacing: -.015em; line-height: 1.2; margin: 0 0 .25rem; }
+  .meta { color: var(--muted); font-size: .9375rem; margin: 0 0 1rem; }
+  .project p { max-width: 62ch; margin: 0 0 1rem; }
+  .project ul { max-width: 62ch; margin: 0 0 1rem; padding-left: 1.25rem; }
+  .project li { margin-bottom: .6rem; }
+  .project li::marker { color: var(--accent); }
+  .stack { color: var(--muted); font-size: .9375rem; margin: 0; }
+  .stack b { color: var(--ink); font-weight: 600; }
+
+  /* Skills */
+  dl.skills { margin: 0; display: grid; gap: 1.25rem 2rem; }
+  dl.skills div { display: grid; gap: .15rem 2rem; }
+  dl.skills dt { font-weight: 600; }
+  dl.skills dd { margin: 0; color: var(--muted); max-width: 56ch; }
+  @media (min-width: 620px) { dl.skills div { grid-template-columns: 160px 1fr; } }
+
+  /* Education */
+  ol.edu { list-style: none; margin: 0; padding: 0; display: grid; gap: 2rem; }
+  ol.edu li { display: grid; gap: .25rem 2rem; }
+  ol.edu .date { color: var(--muted); font-size: .9375rem; font-variant-numeric: tabular-nums; }
+  ol.edu h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; margin: 0 0 .15rem; line-height: 1.25; }
+  ol.edu p { margin: 0 0 .5rem; max-width: 62ch; }
+  ol.edu ul { margin: 0; padding-left: 1.25rem; color: var(--muted); max-width: 62ch; }
+  @media (min-width: 620px) { ol.edu li { grid-template-columns: 160px 1fr; } }
+
+  /* Volunteering */
+  ol.vol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
+  ol.vol li { display: grid; gap: .25rem 2rem; }
+  ol.vol .date { color: var(--muted); font-size: .9375rem; font-variant-numeric: tabular-nums; }
+  ol.vol h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; margin: 0 0 .15rem; line-height: 1.25; }
+  ol.vol p { margin: 0; max-width: 62ch; }
+  ol.vol .tag { display: inline-block; font-size: .8125rem; font-weight: 600; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0 .55rem; margin-left: .4rem; vertical-align: middle; }
+  @media (min-width: 620px) { ol.vol li { grid-template-columns: 160px 1fr; } }
+
+  /* Contact */
+  .contact p { margin: 0 0 1.25rem; max-width: 52ch; }
+  .contact .big { font-family: var(--display); font-weight: 700; font-size: clamp(1.25rem, 4.2vw, 2rem); letter-spacing: -.02em; overflow-wrap: anywhere; }
+  .more { color: var(--muted); font-size: .9375rem; margin-top: 2rem; }
+  .more b { color: var(--ink); font-weight: 600; }
+
+  footer { padding-block: 4rem 3rem; color: var(--muted); font-size: .875rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong>Achraf Naime</strong>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#formation">Formation</a>
+      <a href="#volontariat">Volontariat</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Achraf<br>Naime</h1>
+      <p class="lead">Élève ingénieur en HPC &amp; Big Data à l’INP-ENSEEIHT. Je cherche un stage de 2 mois en analyse de données massives ou en ingénierie des données, à Toulouse, dès le 1er juin 2027.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:naime.achraf1@gmail.com">Écrire à Achraf</a>
+        <a class="link" href="#projets">Voir mes projets</a>
+      </div>
+      <canvas id="lanes" aria-hidden="true"></canvas>
+    </div>
+
+    <section id="projets">
+      <div class="sec">
+        <h2>Projets</h2>
+        <div>
+          <article class="project">
+            <h3>Manag’Eat, application de gestion de restauration</h3>
+            <p class="meta">Février à mai 2026, ENSEEIHT, équipe de 6</p>
+            <p>Application de gestion de restauration centralisée, développée en Java par une équipe Scrum de six personnes.</p>
+            <ul>
+              <li><strong>Architecture et backend.</strong> Conception MVC en Java Swing, persistance des données en JSON avec Gson, et design pattern State pour gérer le cycle de vie des tables.</li>
+              <li><strong>Module RH et données.</strong> Algorithmes de suivi des ressources humaines (turnover, absentéisme) et croisement du chiffre d’affaires avec la productivité horaire.</li>
+              <li><strong>Travail en équipe.</strong> Méthode agile avec Jira, gestion Git rigoureuse pour éviter les conflits, et revues de code.</li>
+            </ul>
+            <p class="stack"><b>Technologies</b> Java, Swing, Gson, JSON, Git, Jira, Scrum</p>
+          </article>
+
+          <article class="project">
+            <h3>Thermomètre infrarouge intelligent</h3>
+            <p class="meta">Mai 2024, projet TIPE, classe préparatoire</p>
+            <p>Conception et optimisation d’un thermomètre dont la mesure s’adapte aux influences de l’environnement.</p>
+            <ul>
+              <li><strong>Électronique.</strong> Montage et acquisition des données avec une carte Arduino Uno, un capteur infrarouge MLX90614 et un capteur DHT22.</li>
+              <li><strong>Modélisation.</strong> Modèle physique avec une correction exponentielle de l’humidité pour compenser les perturbations.</li>
+              <li><strong>Analyse de données.</strong> Scripts Python (NumPy, Matplotlib) pour automatiser le calcul des erreurs et tracer les mesures corrigées.</li>
+            </ul>
+            <p class="stack"><b>Technologies</b> Arduino, Python, NumPy, Matplotlib</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="sec">
+        <h2>Compétences</h2>
+        <dl class="skills">
+          <div><dt>Langages</dt><dd>C, Java, Python, Ada, Matlab</dd></div>
+          <div><dt>Mathématiques</dt><dd>Probabilités, statistiques, algèbre linéaire, analyse numérique, calcul scientifique, optimisation</dd></div>
+          <div><dt>Outils</dt><dd>Git, Linux/Unix, Eclipse, méthodes agiles (Scrum)</dd></div>
+          <div><dt>Langues</dt><dd>Arabe (langue maternelle), français (courant), anglais (courant)</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="formation">
+      <div class="sec">
+        <h2>Formation</h2>
+        <ol class="edu">
+          <li>
+            <span class="date">2025 à 2028</span>
+            <div>
+              <h3>Diplôme d’ingénieur en Sciences du Numérique, spécialité HPC &amp; Big Data</h3>
+              <p>INP-ENSEEIHT, Toulouse</p>
+              <ul>
+                <li>Génie du logiciel et des systèmes : architecture, conception et méthodes</li>
+                <li>Optimisation et recherche opérationnelle</li>
+                <li>Théorie des automates et des langages, théorie des graphes</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <span class="date">2022 à 2024</span>
+            <div>
+              <h3>Classe préparatoire aux grandes écoles, MPSI puis MP*</h3>
+              <p>Lycée Moulay Youssef, Rabat (Maroc). Préparation intensive aux concours des grandes écoles d’ingénieurs.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="volontariat">
+      <div class="sec">
+        <h2>Volontariat</h2>
+        <ol class="vol">
+          <li>
+            <span class="date">2023</span>
+            <div>
+              <h3>Caravane de solidarité familiale</h3>
+              <p>Distribution de denrées alimentaires et soutien moral aux populations touchées par le séisme d’Al Haouz, au Maroc.</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">Toulouse</span>
+            <div>
+              <h3>Clean Walk, AE-ENSEEIHT</h3>
+              <p>5 heures de nettoyage de l’environnement dans les rues de Toulouse, avec l’initiative Clean Walk organisée par l’association des élèves de l’ENSEEIHT.</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">À venir</span>
+            <div>
+              <h3>Rayon U31 <span class="tag">prévu</span></h3>
+              <p>Aide à la distribution de denrées alimentaires aux étudiants en situation de précarité financière.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sec contact">
+        <h2>Contact</h2>
+        <div>
+          <p>Je recherche un stage d’assistant ingénieur de 2 mois en Big Data Analytics ou en ingénierie des données, à partir du 1er juin 2027, à Toulouse. Titulaire du permis B.</p>
+          <a class="big" href="mailto:naime.achraf1@gmail.com">naime.achraf1@gmail.com</a>
+          <p class="more"><b>GitHub</b> <a href="https://github.com/Senyuuu">github.com/Senyuuu</a></p>
+          <p class="more" style="margin-top:1rem"><b>En dehors des cours</b> football, volleyball, musculation, voyage et jeux vidéo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Achraf Naime</footer>
+</div>
+
+<script>
+(function () {
+  var canvas = document.getElementById('lanes');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var LANES = 5, lanes = [], w = 0, h = 0, dpr = 1;
+  var accent = '#0B6E78', line = '#CBD6DF', frame = 0, running = false, last = 0, visible = true;
+
+  function readColors() {
+    var s = getComputedStyle(document.documentElement);
+    accent = s.getPropertyValue('--accent').trim() || accent;
+    line = s.getPropertyValue('--line').trim() || line;
+  }
+
+  function seed() {
+    lanes = [];
+    for (var i = 0; i < LANES; i++) {
+      var blocks = [], x = -Math.random() * 120;
+      while (x < w + 240) {
+        var bw = 18 + Math.random() * 90;
+        blocks.push({ x: x, w: bw });
+        x += bw + 14 + Math.random() * 70;
+      }
+      lanes.push({ blocks: blocks, speed: 0.03 + i * 0.022 + Math.random() * 0.012 });
+    }
+  }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    seed(); draw();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    var gap = h / LANES;
+    for (var i = 0; i < LANES; i++) {
+      var y = gap * (i + 0.5);
+      ctx.globalAlpha = 1; ctx.fillStyle = line;
+      ctx.fillRect(0, y, w, 1);
+      ctx.fillStyle = accent;
+      var bl = lanes[i].blocks;
+      for (var j = 0; j < bl.length; j++) {
+        ctx.globalAlpha = 0.28 + Math.min(bl[j].w / 110, 1) * 0.6;
+        ctx.fillRect(bl[j].x, y - 5, bl[j].w, 10);
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function step(t) {
+    if (!running) return;
+    var dt = Math.min(t - last, 50); last = t;
+    for (var i = 0; i < LANES; i++) {
+      var L = lanes[i], minX = Infinity, k;
+      for (k = 0; k < L.blocks.length; k++) {
+        L.blocks[k].x += L.speed * dt;
+        if (L.blocks[k].x < minX) minX = L.blocks[k].x;
+      }
+      for (k = 0; k < L.blocks.length; k++) {
+        if (L.blocks[k].x > w + 20) {
+          L.blocks[k].x = minX - L.blocks[k].w - 14 - Math.random() * 70;
+          minX = L.blocks[k].x;
+        }
+      }
+    }
+    if (++frame % 30 === 0) readColors();
+    draw();
+    requestAnimationFrame(step);
+  }
+
+  function start() {
+    if (reduce || running || !visible) return;
+    running = true; last = performance.now(); requestAnimationFrame(step);
+  }
+  function stop() { running = false; }
+
+  readColors(); resize();
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
+  else window.addEventListener('resize', resize);
+
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  var onScheme = function () { readColors(); draw(); };
+  if (mq.addEventListener) mq.addEventListener('change', onScheme);
+
+  if (window.IntersectionObserver) {
+    new IntersectionObserver(function (e) {
+      visible = e[0].isIntersecting;
+      visible ? start() : stop();
+    }).observe(canvas);
+  }
+  start();
+})();
+</script>
+</body>
+</html>
